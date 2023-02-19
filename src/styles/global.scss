@@ -1,0 +1,69 @@
+@use './breakpoints.scss';
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+:root {
+  font-size: 10px;
+}
+
+body, button, input, textarea {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  --border-radius: 6px;
+  --content-width: 100%;
+
+  &[data-theme=light] {
+    --primary-color: #5E35B1;
+    --primary-contrast: #FFFFFF;
+    --secondary-color: #51D1E1;
+    --secondary-contrast: #000000;
+
+    --background-color: #FFFFFF;
+    --background-contrast: #000000;
+    
+    --gray-color: gray;
+    --gray-contrast: white;
+  }
+  
+  &[data-theme=dark] {
+    --primary-color: #5E35B1;
+    --primary-contrast: #FFFFFF;
+    --secondary-color: #51D1E1;
+    --secondary-contrast: #000000;
+
+    --background-color: #222222;
+    --background-contrast: #FFFFFF;
+    
+    --gray-color: gray;
+    --gray-contrast: white;
+  }
+
+  &[data-scroll=lock] {
+    overflow: hidden;
+  }
+
+  @include breakpoints.xl {
+    --content-width: 120rem;
+  }
+}
+
+.app-container {
+  background-color: var(--background-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 100vh;
+}

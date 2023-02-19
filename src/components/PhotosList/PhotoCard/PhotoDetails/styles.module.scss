@@ -1,0 +1,31 @@
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/mixins.scss';
+
+.photoDetailsContainer {
+  @include mixins.paper(var(--secondary-color), 0);
+  width: calc(100% - 2rem);
+  border-radius: var(--border-radius);
+  margin: 1rem;
+
+  
+  @include breakpoints.md {
+    max-width: 80rem;
+    margin: 5vh 0;
+  }
+}
+
+.info {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 7rem 2rem 2rem;
+}
+
+.photographerName {
+  font-size: 2rem;
+}
+
+.photoContainer {
+  font-size: 0;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  overflow: hidden;
+}

@@ -1,0 +1,51 @@
+@use '../../styles/mixins.scss';
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modalContainer {
+  @include mixins.animation(fadein);
+
+  background-color: #00000088;
+  backdrop-filter: blur(5px);
+
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  overflow: auto;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  grid-template-rows: 0 1fr;
+
+  &.closing {
+    @include mixins.animation(fadeout);
+    overflow: hidden;
+  }
+}
+
+.closeBtn {
+  position: sticky;
+  top: 2rem;
+  right: 2rem;
+  margin-left: auto;
+  z-index: 101;
+}

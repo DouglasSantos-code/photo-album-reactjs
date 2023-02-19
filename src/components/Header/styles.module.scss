@@ -1,0 +1,36 @@
+@use '../../styles/breakpoints.scss';
+
+.wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background-color: var(--background-color);
+  box-shadow: 0 1px 5px 0 var(--primary-color);
+
+  padding: 0 1rem;
+}
+
+.headerContent {
+  flex: 1;
+  width: var(--content-width);
+  margin: auto;
+
+  height: 6rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 8.5rem;
+  height: 4rem;
+
+  display: none;
+
+  @include breakpoints.sm {
+    display: initial;
+  }
+}
